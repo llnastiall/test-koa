@@ -6,10 +6,10 @@ const parentDir = join(__dirname, '..');
 const connectionOpts: ConnectionOptions = {
     type: 'postgres',
     host: process.env.DB_HOST || 'db',
-    port: Number(process.env.DB_PORT) || 5432,
-    username: process.env.DB_USERNAME || 'postgres',
-    password: process.env.DB_PASSWORD || '1234',
-    database: process.env.DB_NAME || 'koa-test',
+    port: Number(process.env.DB_PORT),
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     entities: [
         `${parentDir}/**/*.entity.ts`,
     ],
