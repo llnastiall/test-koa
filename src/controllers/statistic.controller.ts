@@ -25,7 +25,7 @@ export async function updateStatistics(ctx: Context) {
     statistics.ownerPhoneViews += ownerPhoneViews;
 
     await statisticsRepository.save(statistics);
-    ctx.status = 204; // No Content
+    ctx.status = 204; 
 }
 
 export async function getStatistics(ctx: Context) {

@@ -8,10 +8,10 @@ export class Statistic {
     @Column()
     autoId!: string;
 
-    @Column({ default: 0 }) // Приклад встановлення значення за замовчуванням
+    @Column({ default: 0 }) 
     listingViews!: number;
 
-    @Column({ default: 0 }) // Приклад встановлення значення за замовчуванням
+    @Column({ default: 0 }) 
     ownerPhoneViews!: number;
 }
 
