@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: koa-test
+    container_name: postgres
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: koa-docker-postgres
+    environment:
+      - PORT=${PORT}
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+    volumes:
+      - ./src:/app/src
